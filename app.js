@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
   const url =
-    "https://api.nasa.gov/planetary/apod?api_key=JE1SJzTxk173i6H23FBeghGUD2yHWjB7mryPubcE";
+    api_key;
 
   https.get(url, function (response) {
     console.log(response.statusCode);
