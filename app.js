@@ -5,6 +5,7 @@ const https = require("https");
 
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const key = require(__dirname + "/apikey.js")
 
 const app = express();
 
@@ -15,10 +16,10 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
   const url =
-    api_key;
+    key.config();
 
   https.get(url, function (response) {
-    console.log(response.statusCode);
+   
     response.on("data", function (data) {
       const nasaData = JSON.parse(data);
 
